@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title: string;
+  sections: any;
+}
+
+import Layout from "./Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import Section from "../components/Section.astro";
+const { title, sections } = Astro.props;
+---
+
+<Layout title=title />
+<main class="scroll">
+  <NavigationBar
+    items={sections.map((data) => {
+      return data.nav;
+    })}
+  />
+  <div class="scrolleable">
+
+
+    {
+      sections.map((data) => (
+        <Section
+          title={data.title}
+          cost={data.cost}
+          background={data.background}
+          nav={data.nav}
+        />
+      ))
+    }
+  </div>
+</main>
+
+<style>
+  .hero {
+    height: 100%;
+  }
+  .scrolleable {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrolleable::-webkit-scrollbar {
+    display: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+</style>
