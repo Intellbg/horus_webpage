@@ -8,9 +8,8 @@ const { items } = Astro.props;
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="/horus_webpage/images/logo.png" width="112" height="28" />
+      <img src="/images/logo.png" width="112" height="28" />
     </a>
-
     <a
       role="button"
       class="navbar-burger"
@@ -25,7 +24,8 @@ const { items } = Astro.props;
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-end">
+    <div class="navbar-start " style="flex-grow:1;  align-items: center;
+    justify-content: center;align-content:   justify-content: space-between;">
       {
         items.map((item) => (
           <a class="navbar-item" href={"#" + item}>
@@ -34,6 +34,9 @@ const { items } = Astro.props;
           </a>
         ))
       }
+    </div>
+    <div class="navbar-end">
+      <a role="button" class="navbar-item" id="#menu">MENU</a>
     </div>
   </div>
 </nav>
@@ -44,11 +47,37 @@ const { items } = Astro.props;
     color: white;
   }
   .navbar-item {
-    color: white;
+    color: white;flex:0 0 auto;
   }
   a.navbar-item:hover {
     background-color: transparent;
     backdrop-filter: blur(12px) !important;
     color: #ad7600;
   }
+  @media only screen and (max-width: 600px) {
+    .navbar-menu {
+      background-color: #101820;
+    }
+  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById('menu');
+    menu.addEventListener('click',()=>{console.log('ga')})
+
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll(".navbar-burger"),
+      0
+    );
+
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+  });
+
+</script>
