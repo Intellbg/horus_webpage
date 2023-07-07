@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Crema corporal para hombre",
+        "cost": 21.75,
+        "background": "/images/cuidado_corporal/1.jpg",
+        "nav": "Crema corporal"
+    },
+    {
+        "title": "Crema de manos",
+        "cost": 10.75,
+        "background": "/images/cuidado_corporal/2.jpg",
+        "nav": "Crema de manos"
+    },
+    {
+        "title": "Gel de ducha y shampoo",
+        "cost": 10.75,
+        "background": "/images/cuidado_corporal/3.jpg",
+        "nav": "Gel de ducha y shampoo"
+    },
+    {
+        "title": "Gel de higiene íntima",
+        "cost": 10.75,
+        "background": "/images/cuidado_corporal/4.jpg",
+        "nav": "Gel de higiene íntima"
+    },
+    {
+        "title": "Desodorantes",
+        "cost": 9.49,
+        "background": "/images/cuidado_corporal/5.jpg",
+        "nav": "Desodorantes"
+    },
+    {
+        "title": "Lubricante natural",
+        "cost": 14.50,
+        "background": "/images/cuidado_corporal/6.jpg",
+        "nav": "Lubricante natural"
+    }
+]

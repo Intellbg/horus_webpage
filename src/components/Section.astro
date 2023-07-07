@@ -7,11 +7,11 @@ export interface Props {
   showButton?: boolean;
 }
 
-const { title, cost, background, nav, showButton = true } = Astro.props;
+const { title, cost, background, nav } = Astro.props;
 ---
 
 <div class="hero scrollpage">
-  <img src={background} alt={title} id={nav} />
+  <img src={background} alt={title} id={nav} /><slot></slot>
   <div class="head-title">
     <h1 class="is-size-1">{title}</h1>{
       cost && (
@@ -22,7 +22,7 @@ const { title, cost, background, nav, showButton = true } = Astro.props;
     }
   </div>
   {
-    showButton && (
+    cost && (
       <a
         href="https://api.whatsapp.com/send/?phone=593984187869&text&type=phone_number&app_absent=0"
         class="button"

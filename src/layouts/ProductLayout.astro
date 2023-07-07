@@ -1,12 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
+export interface Props {
+  title: string;
+  sections: any;
+}
+
+import Layout from "./Layout.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import Section from "../components/Section.astro";
-import sections from "../data/index.json";
+const { title, sections } = Astro.props;
 ---
 
-<Layout title="HORUS" />
-
+<Layout title={title} />
 <main class="scroll">
   <NavigationBar
     items={sections.map((data) => {
@@ -14,12 +18,17 @@ import sections from "../data/index.json";
     })}
   />
   <div class="scrolleable">
-    <Section
-      title="¿Te atreves a vivir la experiencia?"
-      background="/images/cover.jpg"
-      nav=""
-      showButton={false}
-    />
+    {
+      sections.map((data) => (
+          <Section
+            title={data.title}
+            cost={data.cost}
+            background={data.background}
+            nav={data.nav}
+          />
+        </>
+      ))
+    }
   </div>
 </main>
 
