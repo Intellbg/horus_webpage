@@ -10,7 +10,7 @@ import Section from "../components/Section.astro";
 const { title, sections } = Astro.props;
 ---
 
-<Layout title=title />
+<Layout title={title} />
 <main class="scroll">
   <NavigationBar
     items={sections.map((data) => {
@@ -18,16 +18,15 @@ const { title, sections } = Astro.props;
     })}
   />
   <div class="scrolleable">
-
-
     {
       sections.map((data) => (
-        <Section
-          title={data.title}
-          cost={data.cost}
-          background={data.background}
-          nav={data.nav}
-        />
+          <Section
+            title={data.title}
+            cost={data.cost}
+            background={data.background}
+            nav={data.nav}
+          />
+        </>
       ))
     }
   </div>

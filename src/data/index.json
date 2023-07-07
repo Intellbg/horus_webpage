@@ -1,0 +1,16 @@
+[    
+    {
+        "title":"¿Te atreves a vivir la experiencia?",
+        "background":"/images/cover.jpg"
+    },
+    {
+        "title":"Productos",
+        "background":"/images/cuidado_facial/1.jpg",
+        "nav":"Productos"
+    },
+    {
+        "title":"SPA",
+        "background":"/images/cuidado_facial/2.jpg",
+        "nav":"SPA"
+    }
+]

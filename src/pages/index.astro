@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import Section from "../components/Section.astro";
-import sections from "../data/cuidado_facial.json";
+import sections from "../data/index.json";
 ---
 
 <Layout title="HORUS" />
@@ -16,21 +16,10 @@ import sections from "../data/cuidado_facial.json";
   <div class="scrolleable">
     <Section
       title="¿Te atreves a vivir la experiencia?"
-      background="/horus_webpage/images/cover.jpg"
+      background="/images/cover.jpg"
       nav=""
       showButton={false}
     />
-
-    {
-      sections.map((data) => (
-        <Section
-          title={data.title}
-          cost={data.cost}
-          background={data.background}
-          nav={data.nav}
-        />
-      ))
-    }
   </div>
 </main>
 
