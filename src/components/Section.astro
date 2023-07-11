@@ -26,8 +26,8 @@ let bg = split[0] + "_mob." + split[1];
     })}
     isBlack={isBlack}
   />
-  <img src={background} alt={title} id={nav} class="is-hidden-mobile" />
-  <img src={bg} alt={title} id={nav} class="is-hidden-tablet" />
+  <img src={background} alt={title} id={nav} class="is-hidden-mobile bg_img" />
+  <img src={bg} alt={title} id={nav} class="is-hidden-tablet bg_img" />
   <div class="head-title">
     <h1 class="is-size-2">{title}</h1>{
       cost && (
@@ -46,8 +46,10 @@ let bg = split[0] + "_mob." + split[1];
         >
           Ordena ahora
         </a>
-        {info?.title &&  (
-          <button class="button js-modal-trigger" data-target={info?.title}>Conoce más</button>
+        {info?.title && (
+          <button class="button js-modal-trigger" data-target={info?.title}>
+            Conoce más
+          </button>
         )}
       </div>
     )
@@ -77,16 +79,13 @@ document.querySelectorAll(".js-modal-trigger").forEach(($trigger) => {
 
 <style>
   .hero {
-    height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     position: relative;
     color: white;
   }
-
-  img {
-    height: 100%;
-    width: 100%;
+  .bg_img {
+    height: 100vh;
     object-fit: cover;
   }
   .head-title {
@@ -107,13 +106,14 @@ document.querySelectorAll(".js-modal-trigger").forEach(($trigger) => {
     color: black;
   }
   .buttons {
-    bottom: 10%;
-    position: relative;
+    width: 100%;
+    bottom: 5%;
+    position: absolute;
   }
   .button {
     border-style: none;
     width: fit-content;
-    font-size: 1.25em;
+    font-size: 1.15em;
   }
   .button:hover {
     color: white;
