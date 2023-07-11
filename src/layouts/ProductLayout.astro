@@ -12,8 +12,7 @@ const { title, sections } = Astro.props;
 
 <Layout title={title} />
 <SideMenu></SideMenu>
-<main class="scroll">
-  <div class="scrolleable">
+<main class="scrolleable">
     {
       sections.map((data) => (
                 <Section
@@ -27,16 +26,10 @@ const { title, sections } = Astro.props;
                 />
             ))
     }
-  </div>
 </main>
 
 <style>
-
-  .hero {
-    height: 100%;
-  }
   .scrolleable {
-    height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none; /* IE and Edge */
@@ -47,10 +40,5 @@ const { title, sections } = Astro.props;
   }
   body::-webkit-scrollbar {
     display: none;
-  }
-  img {
-    display: block;
-    height: 100%;
-    width: 100%;
   }
 </style>
