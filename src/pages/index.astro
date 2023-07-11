@@ -1,48 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import NavigationBar from "../components/NavigationBar.astro";
-import Section from "../components/Section.astro";
 import sections from "../data/index.json";
+import ProductLayout from "../layouts/SingleProductLayout.astro";
+
 ---
 
-<Layout title="HORUS" />
-
-<main class="scroll">
-  <NavigationBar
-    items={sections.map((data) => {
-      return data.nav;
-    })}
-  />
-  <div class="scrolleable">
-    <Section
-      title="¿Te atreves a vivir la experiencia?"
-      background="/images/cover.jpg"
-      nav=""
-      showButton={false}
-    />
-  </div>
-</main>
-
-<style>
-  .hero {
-    height: 100%;
-  }
-  .scrolleable {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  .scrolleable::-webkit-scrollbar {
-    display: none;
-  }
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  img {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-</style>
+<ProductLayout title="Horus | Cuidado Facial" sections={sections}/>

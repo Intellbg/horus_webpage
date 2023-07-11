@@ -1,0 +1,35 @@
+<aside class="menu p-2 is-hidden" id="sideMenu">
+  <div class="buttons is-right">
+    <button class="delete is-right" id="close_sidebar"></button>
+  </div>
+  <p class="menu-label">Productos</p>
+  <ul class="menu-list">
+    <li><a href="/"> Cuidado Facial</a></li>
+    <li><a href="/cuidado_corporal">Cuidado Corporal</a></li>
+    <li><a href="/ducha_e_higiene">Ducha E Higiene</a></li>
+  </ul>
+</aside>
+
+<style>
+  .menu {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    right: 0%;
+    margin: 0%;
+  }
+  @media only screen and (max-width: 768px) {
+    .menu {
+      width: 50%;
+    }
+  }
+</style>
+
+<script is:inline>
+  var deleteBtn=document.getElementById("close_sidebar")
+  deleteBtn.addEventListener('click',function(){
+        document.getElementById("sideMenu").classList.add("is-hidden");
+  })
+</script>

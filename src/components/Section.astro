@@ -1,19 +1,26 @@
 ---
+import NavigationBar from "../components/NavigationBar.astro";
 export interface Props {
   title: string;
   cost?: number;
   background: string;
   nav: string;
+  isBlack?: boolean;
   showButton?: boolean;
+  sections?: any;
 }
 
-const { title, cost, background, nav } = Astro.props;
+const { title, cost, background, nav, isBlack, sections } = Astro.props;
+let split=background.split(".")
+let bg = split[0]+"_mob."+split[1]
 ---
 
-<div class="hero scrollpage">
-  <img src={background} alt={title} id={nav} /><slot></slot>
+<div class="hero" class:list={[ { black: isBlack }]}>
+  <NavigationBar items={sections.map((data) => {return data.nav;})} isBlack={isBlack}/>
+  <img src={background} alt={title} id={nav} class="is-hidden-mobile"/>
+  <img src={bg} alt={title} id={nav} class="is-hidden-tablet" />
   <div class="head-title">
-    <h1 class="is-size-1">{title}</h1>{
+    <h1 class="is-size-2">{title}</h1>{
       cost && (
         <p>
           <u> desde ${cost}</u>
@@ -34,21 +41,21 @@ const { title, cost, background, nav } = Astro.props;
 </div>
 
 <style>
-  .scrollpage {
+  .hero {
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-  }
-  .hero {
     height: 100%;
     position: relative;
+    color: white;
   }
+
   img {
     height: 100vh;
     width: 100%;
+    object-fit: cover;
   }
   .head-title {
-    position: absolute;
     position: absolute;
     width: 100%;
     top: 10%;
@@ -56,23 +63,22 @@ const { title, cost, background, nav } = Astro.props;
   }
   h1 {
     width: 100%;
-    color: white;
     font-style: normal;
     font-weight: 700;
   }
   p {
-    color: white;
     text-align: center;
+  }
+  .black {
+    color: black;
   }
   .button {
     border-style: none;
-    color: white;
     position: relative;
     bottom: 10%;
     padding-left: 2em;
     padding-right: 2em;
     width: fit-content;
-    background: #101820;
     font-size: 1.25em;
     left: 50%;
     transform: translateX(-50%);
@@ -80,5 +86,15 @@ const { title, cost, background, nav } = Astro.props;
   .button:hover {
     color: white;
     background-color: #ad7600;
+  }
+
+  .black .button:hover {
+    color: white;
+    background-color: #ad7600;
+  }
+  
+  .black .button{
+    color: white;
+    background: #101820;
   }
 </style>

@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -22,6 +22,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+    
   </body>
 </html>
 <style is:global>
@@ -35,3 +36,13 @@ const { title } = Astro.props;
   }
 
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let buttons = document.getElementsByClassName("sideMenuButton");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function () {
+        document.getElementById("sideMenu").classList.remove("is-hidden");
+      });
+    }
+  });
+</script>

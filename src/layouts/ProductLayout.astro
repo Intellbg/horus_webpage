@@ -5,34 +5,32 @@ export interface Props {
 }
 
 import Layout from "./Layout.astro";
-import NavigationBar from "../components/NavigationBar.astro";
 import Section from "../components/Section.astro";
+import SideMenu from "../components/SideMenu.astro";
 const { title, sections } = Astro.props;
 ---
 
 <Layout title={title} />
+<SideMenu></SideMenu>
 <main class="scroll">
-  <NavigationBar
-    items={sections.map((data) => {
-      return data.nav;
-    })}
-  />
   <div class="scrolleable">
     {
       sections.map((data) => (
-          <Section
-            title={data.title}
-            cost={data.cost}
-            background={data.background}
-            nav={data.nav}
-          />
-        </>
-      ))
+                <Section
+                  title={data.title}
+                  cost={data.cost}
+                  background={data.background}
+                  nav={data.nav}
+                  isBlack={data.isBlack}
+                  sections = {sections.filter((item)=>item)}
+                />
+            ))
     }
   </div>
 </main>
 
 <style>
+
   .hero {
     height: 100%;
   }

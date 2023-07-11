@@ -1,53 +1,70 @@
 ---
 export interface Props {
   items?: Array<string>;
+  isBlack?: boolean;
 }
-const { items } = Astro.props;
+const { items, isBlack } = Astro.props;
+let logo = "/images/logo.png";
+if (isBlack) {
+  logo = "/images/logo_black.png";
+}
+let filteredItems = items.filter((elm) => elm);
 ---
 
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
+<nav
+  class="navbar is-flex is-flex-grow-0"
+  class:list={[{ black: isBlack }]}
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="navbar-brand" style="min-width: 10%;">
     <a class="navbar-item" href="/">
-      <img src="/images/logo.png" width="112" height="28" />
-    </a>
-    <a
-      role="button"
-      class="navbar-burger"
-      aria-label="menu"
-      aria-expanded="false"
-      data-target="navbarBasicExample"
-    >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+      <img src={logo} width="112" height="28" />
     </a>
   </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start " style="flex-grow:1;  align-items: center;
-    justify-content: center;align-content:   justify-content: space-between;">
+  <div class="is-hidden-desktop sep"></div>
+  <div class="navbar-menu">
+    <div
+      class="navbar-start"
+      style="flex-grow:1;  align-items: center;
+    justify-content: center;align-content:   justify-content: space-between;"
+    >
       {
-        items.map((item) => (
-          <a class="navbar-item" href={"#" + item}>
-            {" "}
-            {item}
-          </a>
-        ))
+        filteredItems
+          .filter((elm) => elm)
+          .map((item) => (
+            <a class="navbar-item" href={"#" + item}>
+              {item}
+            </a>
+          ))
       }
     </div>
-    <div class="navbar-end">
-      <a role="button" class="navbar-item" id="#menu">MENU</a>
-    </div>
+  </div>
+  <div
+    class="navbar-brand is-justify-content-flex-end sideMenuButton"
+    style="min-width: 10%;"
+  >
+    <a role="button" class="navbar-item" id="menu">MENU</a>
   </div>
 </nav>
 
 <style>
+  .sep {
+    flex: 1;
+  }
+  .black {
+    color: black;
+  }
+  .black .navbar-item {
+    color: black;
+  }
   .navbar {
-    background-color: transparent;
-    color: white;
+    position: absolute;
+    width: 100%;
   }
   .navbar-item {
-    color: white;flex:0 0 auto;
+    color: white;
+    flex: 0 0 auto;
   }
   a.navbar-item:hover {
     background-color: transparent;
@@ -60,24 +77,4 @@ const { items } = Astro.props;
     }
   }
 </style>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menu = document.getElementById('menu');
-    menu.addEventListener('click',()=>{console.log('ga')})
 
-    const $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll(".navbar-burger"),
-      0
-    );
-
-    $navbarBurgers.forEach((el) => {
-      el.addEventListener("click", () => {
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-        el.classList.toggle("is-active");
-        $target.classList.toggle("is-active");
-      });
-    });
-  });
-
-</script>
