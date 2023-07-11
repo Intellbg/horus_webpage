@@ -83,10 +83,12 @@ document.querySelectorAll(".js-modal-trigger").forEach(($trigger) => {
     scroll-snap-stop: always;
     position: relative;
     color: white;
+    height: 100%;
   }
   .bg_img {
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
   }
   .head-title {
     position: absolute;
