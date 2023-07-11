@@ -1,51 +1,228 @@
 [
     {
-        "title":"¿Te atreves a vivir la experiencia?",
-        "background":"/images/cover.jpg"
+        "title": "¿Te atreves a vivir la experiencia?",
+        "background": "/images/cover.jpg"
     },
     {
-        "title":"Limpieza facial detox / Paso 1",
-        "cost":17.49,
-        "background":"/images/cuidado_facial/1.jpg",
-        "nav":"Limpieza"
+        "title": "Limpieza facial detox / Paso 1",
+        "cost": 17.49,
+        "background": "/images/cuidado_facial/1.jpg",
+        "nav": "Limpieza",
+        "info": {
+            "img": "/images/cuidado_facial/1_d.jpg",
+            "title": "Paso 1",
+            "subtitle": "Limpieza facial detox + afeitado suave",
+            "characteristics": [
+                {
+                    "title": "Limpiador Facial",
+                    "detail": [
+                        "Combate puntos negros",
+                        "Ayuda a regenerar la piel",
+                        "Limpiador de pieles acneicas"
+                    ]
+                },
+                {
+                    "title": "Crema para afeitar",
+                    "detail": [
+                        "Afeitado suave",
+                        "Ablanda tu barba"
+                    ]
+                }
+            ],
+            "use": [
+                "Aplica una fina capa con la piel húmeda",
+                "Afeita la zona",
+                "Utilizarlo como limpiador purificante",
+                "Aclarar con abundante agua y secar dando toquecitos con la toalla, sin frotar"
+            ],
+            "details": [
+                "Sin sulfatos",
+                "Con pH 5.5",
+                "Dermoprotector",
+                "Con Aloe Vera + Manzanilla Vio",
+                "Con la aromaterapia de aceites asenciales 100% puros"
+            ]
+        }
     },
     {
-        "title":"Exfoliante facial / Paso 2",
-        "cost":17.49,
-        "background":"/images/cuidado_facial/2.jpg",
-        "nav":"Exfoliante",
-        "isBlack":true
+        "title": "Exfoliante facial / Paso 2",
+        "cost": 17.49,
+        "background": "/images/cuidado_facial/2.jpg",
+        "nav": "Exfoliante",
+        "isBlack": true,
+        "info": {
+            "img": "/images/cuidado_facial/2_d.jpg",
+            "title": "Paso 2",
+            "subtitle": "Exfoliante facial",
+            "characteristics": [
+                {
+                    "title": "Limpiador Facial",
+                    "detail": [
+                        "Retira las células muertas ",
+                        "Regenera tu piel",
+                        "Consigue un rostro más uniforme",
+                        "Ideal para codos"
+                    ]
+                }
+            ],
+            "use": [
+                "Aplicar sobre la piel de la cara",
+                "Realizar masajes muy suaves, evitando la zona de los ojos",
+                "Aclarar con abundante agua y secar"
+            ]
+        }
     },
     {
-        "title":"Revitalizante facial / Paso 3",
-        "cost":17.49,
-        "background":"/images/cuidado_facial/3.jpg",
-        "nav":"Revitalizante"
+        "title": "Revitalizante facial / Paso 3",
+        "cost": 17.49,
+        "background": "/images/cuidado_facial/3.jpg",
+        "nav": "Revitalizante",
+        "info": {
+            "img": "/images/cuidado_facial/3_d.jpg",
+            "title": "Paso 3",
+            "subtitle": "Revitalizante Facial",
+            "characteristics": [
+                {
+                    "title": "Revitalizante Facial",
+                    "detail": [
+                        "Reduce las arrugas",
+                        "Repara la piel de la exposición solar"
+                    ]
+                },
+                {
+                    "title": "Crema para afeitar",
+                    "detail": [
+                        "Rehidrata y protege tu piel",
+                        "Calmante para después del afeitado"
+                    ]
+                }
+            ],
+            "use": [
+                "Aplicar el spray directamente sobre la cara con los ojos cerrados",
+                "Dar unos toquecitos hasta que se absorba"
+            ],
+            "details": [
+                "Sumérgete en la sofisticación y descubre el deleite de un aporte vitamínico y antioxidante que tonifica tu rostro."
+            ]
+        }
     },
     {
-        "title":"Anti-stress / Paso 4",
-        "cost":27.75,
-        "background":"/images/cuidado_facial/4.jpg",
-        "nav":"Anti-stress",
-        "isBlack":true
+        "title": "Anti-stress / Paso 4",
+        "cost": 27.75,
+        "background": "/images/cuidado_facial/4.jpg",
+        "nav": "Anti-stress",
+        "isBlack": true,
+        "info": {
+            "img": "/images/cuidado_facial/4_d.jpg",
+            "title": "Paso 4",
+            "subtitle": "Anti - Stress Cream Gel",
+            "characteristics": [
+                {
+                    "img": "/images/cuidado_facial/4_d.jpg",
+                    "title": "Crema Antiarrugas",
+                    "detail": [
+                        "Aliado antiarrugas",
+                        "Regenerante celular",
+                        "Nutre, regenera y reafirma"
+                    ]
+                },
+                {
+                    "title": "Antiedad piel mixta o grasa",
+                    "detail": [
+                        "Combate la flacidez prematura de la piel mixta / grasa",
+                        "Úsalo también como reafirmante en la zona del cuello"
+                    ]
+                }
+            ],
+            "use": [
+                "Aplicar en la yema del dedo y repartir en 3 puntos del rostro",
+                "Repartir de forma circular por todo el rostro hasta que se haya absorbido ",
+                "Repetir la acción si es necesario"
+            ],
+            "details": [
+                "Ideal para pieles maduras",
+                "Fragancia a madera mítica",
+                "100% natural, con certificación bio y vegana"
+            ]
+        }
     },
     {
-        "title":"Contorno de ojos",
-        "cost":29.49,
-        "background":"/images/cuidado_facial/5.jpg",
-        "nav":"Contorno de ojos"
+        "title": "Contorno de ojos",
+        "cost": 29.49,
+        "background": "/images/cuidado_facial/5.jpg",
+        "nav": "Contorno de ojos",
+        "info": {
+            "title": "Contorno de ojos ",
+            "img": "/images/cuidado_facial/5_d.jpg",
+            "subtitle": "Eyes on me",
+            "characteristics": [
+                {
+                    "title": "Quita Ojeras",
+                    "detail": [
+                        "Activa la circulación ",
+                        "Tonifica tu piel"
+                    ]
+                },
+                {
+                    "title": "Elimina Bolsas",
+                    "detail": [
+                        "Gran calmante y descongestionante de párpados",
+                        "Reduce las bolsas y ojeras o circulos oscuros debajo de los ojos "
+                    ]
+                }
+            ],
+            "use": [
+                "Aplicar en la zona",
+                "Dar toquecitos con los dedos",
+                "Dejar que absorba"
+            ],
+            "details": [
+                "Roll-on con bola metálica que actúa como masajeante y drenante",
+                "100% natural, con certificación bio y vegana"
+            ]
+        }
     },
     {
-        "title":"Corrector facial",
-        "cost":38.99,
-        "background":"/images/cuidado_facial/6.jpg",
-        "nav":"Corrector facial",
-        "isBlack":true
+        "title": "Corrector facial",
+        "cost": 38.99,
+        "background": "/images/cuidado_facial/6.jpg",
+        "nav": "Corrector facial",
+        "isBlack": true,
+        "info": {
+            "img": "/images/cuidado_facial/6_d.jpg",
+            "title": "Corrector facial ",
+            "subtitle": "Eyes on me",
+            "characteristics": [
+                {
+                    "title": "Corrector facial",
+                    "detail": [
+                        "Combate el envejecimiento de la piel",
+                        "Reduce los signos del cansancio "
+                    ]
+                },
+                {
+                    "title": "Contorno de ojos",
+                    "detail": [
+                        "Elimina las arrugas, bolsas y ojeras",
+                        "Aliado antiarrugas"
+                    ]
+                }
+            ],
+            "use": [
+                "Aplicar en la zona",
+                "Dar toquecitos con los dedos",
+                "Dejar que absorba"
+            ],
+            "details": [
+                "Roll-on con bola metálica que actúa como masajeante y drenante",
+                "100% natural, con certificación bio y vegana"
+            ]
+        }
     },
     {
-        "title":"Serum antiedad",
-        "cost":38.99,
-        "background":"/images/cuidado_facial/7.jpg",
-        "nav":"Serum antiedad"
+        "title": "Serum antiedad",
+        "cost": 38.99,
+        "background": "/images/cuidado_facial/7.jpg",
+        "nav": "Serum antiedad"
     }
 ]

@@ -1,5 +1,7 @@
 ---
 import NavigationBar from "../components/NavigationBar.astro";
+import ProductInfo from "../components/ProductInfo.astro";
+
 export interface Props {
   title: string;
   cost?: number;
@@ -8,16 +10,23 @@ export interface Props {
   isBlack?: boolean;
   showButton?: boolean;
   sections?: any;
+  info?: any;
+  url?: string;
 }
 
-const { title, cost, background, nav, isBlack, sections } = Astro.props;
-let split=background.split(".")
-let bg = split[0]+"_mob."+split[1]
+const { title, cost, background, nav, isBlack, sections, info } = Astro.props;
+let split = background.split(".");
+let bg = split[0] + "_mob." + split[1];
 ---
 
-<div class="hero" class:list={[ { black: isBlack }]}>
-  <NavigationBar items={sections.map((data) => {return data.nav;})} isBlack={isBlack}/>
-  <img src={background} alt={title} id={nav} class="is-hidden-mobile"/>
+<div class="hero" class:list={[{ black: isBlack }]}>
+  <NavigationBar
+    items={sections.map((data) => {
+      return data.nav;
+    })}
+    isBlack={isBlack}
+  />
+  <img src={background} alt={title} id={nav} class="is-hidden-mobile" />
   <img src={bg} alt={title} id={nav} class="is-hidden-tablet" />
   <div class="head-title">
     <h1 class="is-size-2">{title}</h1>{
@@ -30,15 +39,41 @@ let bg = split[0]+"_mob."+split[1]
   </div>
   {
     cost && (
-      <a
-        href="https://api.whatsapp.com/send/?phone=593984187869&text&type=phone_number&app_absent=0"
-        class="button"
-      >
-        Ordena ahora
-      </a>
+      <div class="buttons is-centered">
+        <a
+          href="https://api.whatsapp.com/send/?phone=593984187869&text&type=phone_number&app_absent=0"
+          class="button"
+        >
+          Ordena ahora
+        </a>
+        {info?.title &&  (
+          <button class="button js-modal-trigger" data-target={info?.title}>Conoce más</button>
+        )}
+      </div>
     )
   }
+  {info && <ProductInfo info={info} />}
 </div>
+
+<script is:inline>
+document.querySelectorAll(".js-modal-trigger").forEach(($trigger) => {
+  const modal = $trigger.dataset.target;
+  const $target = document.getElementById(modal);
+  $trigger.addEventListener("click", () => {
+    $target.classList.add("is-active");
+  });
+});
+(
+  document.querySelectorAll(
+    ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
+  ) || []
+).forEach(($close) => {
+  const $target = $close.closest(".modal");
+  $close.addEventListener("click", () => {
+    $target.classList.remove("is-active");
+  });
+});
+</script>
 
 <style>
   .hero {
@@ -72,16 +107,14 @@ let bg = split[0]+"_mob."+split[1]
   .black {
     color: black;
   }
+  .buttons {
+    bottom: 10%;
+    position: relative;
+  }
   .button {
     border-style: none;
-    position: relative;
-    bottom: 10%;
-    padding-left: 2em;
-    padding-right: 2em;
     width: fit-content;
     font-size: 1.25em;
-    left: 50%;
-    transform: translateX(-50%);
   }
   .button:hover {
     color: white;
@@ -92,8 +125,8 @@ let bg = split[0]+"_mob."+split[1]
     color: white;
     background-color: #ad7600;
   }
-  
-  .black .button{
+
+  .black .button {
     color: white;
     background: #101820;
   }

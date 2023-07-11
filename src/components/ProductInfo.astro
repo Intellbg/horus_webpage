@@ -1,0 +1,78 @@
+---
+export interface Props {
+    info?: any;
+}
+
+const { info } = Astro.props;
+---
+
+<div class="modal" id={info.title} style="height: 100vh;">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head is-justify-content-right">
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="columns">
+                <div class="column">
+                    <img src={info.img} alt={info.title} style="full_img" />
+                </div>
+                <div class="column">
+                    <h1 class="is-size-2 has-text-centered">
+                        <strong>{info.title}</strong>
+                    </h1>
+                    <h2 class="is-size-5 has-text-centered">{info.subtitle}</h2>
+                    <br />
+                    <div class="columns">
+                        {
+                            info.characteristics.map((char) => (
+                                <div class="column">
+                                    <h3 class="is-size-4">
+                                        <strong>{char.title}</strong>
+                                    </h3>
+                                    <ul>
+                                        {char.detail.map((detail) => (
+                                            <li>{detail}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <h3 class="is-size-4"><strong>Modo de uso:</strong></h3>
+                    <ul>
+                        {info.use.map((detail) => <li>{detail}</li>)}
+                    </ul>
+                    <br />
+                    <div class="has-text-centered">
+                        <p>opiniones</p>
+                        <img src="images/stars.jpg" alt="" />
+                        <img src="images/bio.jpg" alt="" />
+                        {info.details?.map((detail) => <p>{detail}</p>)}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+    img {
+        display: block;
+        padding: 1em;
+        margin: auto;
+    }
+    .modal-card {
+        min-height: 100%;
+        color: black;
+        width: 100%;
+    }
+    .modal {
+        width: 100%;
+    }
+    .full_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
