@@ -1,13 +1,13 @@
 [
     {
         "title": "Crema corporal para hombre",
-        "cost": 21.75,
+        "cost": 24.30,
         "background": "/images/cuidado_corporal/1.jpg",
         "nav": "Crema corporal"
     },
     {
         "title": "Crema de manos",
-        "cost": 10.75,
+        "cost": 12.60,
         "background": "/images/cuidado_corporal/2.jpg",
         "nav": "Crema de manos",
         "isBlack":true
