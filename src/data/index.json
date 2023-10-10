@@ -5,7 +5,7 @@
     },
     {
         "title": "Limpieza facial detox / Paso 1",
-        "cost": 19.40,
+        "cost": 22.90,
         "background": "/images/cuidado_facial/1.jpg",
         "nav": "Limpieza",
         "info": {
@@ -46,7 +46,7 @@
     },
     {
         "title": "Exfoliante facial / Paso 2",
-        "cost": 19.40,
+        "cost": 22.90,
         "background": "/images/cuidado_facial/2.jpg",
         "nav": "Exfoliante",
         "isBlack": true,
@@ -74,7 +74,7 @@
     },
     {
         "title": "Revitalizante facial / Paso 3",
-        "cost": 19.40,
+        "cost": 22.90,
         "background": "/images/cuidado_facial/3.jpg",
         "nav": "Revitalizante",
         "info": {
@@ -108,7 +108,7 @@
     },
     {
         "title": "Anti-stress / Paso 4",
-        "cost": 34.99,
+        "cost": 40,
         "background": "/images/cuidado_facial/4.jpg",
         "nav": "Anti-stress",
         "isBlack": true,
@@ -148,7 +148,7 @@
     },
     {
         "title": "Contorno de ojos",
-        "cost": 34.10,
+        "cost": 39.00,
         "background": "/images/cuidado_facial/5.jpg",
         "nav": "Contorno de ojos",
         "info": {
@@ -184,7 +184,7 @@
     },
     {
         "title": "Corrector facial",
-        "cost": 44.80,
+        "cost": 52.00,
         "background": "/images/cuidado_facial/6.jpg",
         "nav": "Corrector facial",
         "isBlack": true,
@@ -221,7 +221,7 @@
     },
     {
         "title": "Serum antiedad",
-        "cost": 48.70,
+        "cost": 52.00,
         "background": "/images/cuidado_facial/7.jpg",
         "nav": "Serum antiedad"
     }

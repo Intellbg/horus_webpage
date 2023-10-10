@@ -1,26 +1,26 @@
 [
     {
         "title": "Gel de ducha y shampoo",
-        "cost": 15.50,
+        "cost": 14.20,
         "background": "/images/ducha_e_higiene/1.jpg",
         "nav": "Gel de ducha y shampoo"
     },
     {
         "title": "Gel de higiene íntima",
-        "cost": 12.60,
+        "cost": 14.20,
         "background": "/images/ducha_e_higiene/2.jpg",
         "nav": "Gel de higiene íntima",
         "isBlack":true
     },
     {
         "title": "Desodorantes",
-        "cost": 12.60,
+        "cost": 12.70,
         "background": "/images/ducha_e_higiene/3.jpg",
         "nav": "Desodorantes"
     },
     {
         "title": "Lubricante natural",
-        "cost": 15.50,
+        "cost": 19.00,
         "background": "/images/ducha_e_higiene/4.jpg",
         "nav": "Lubricante natural",
         "isBlack":true
